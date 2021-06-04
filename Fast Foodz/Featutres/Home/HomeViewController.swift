@@ -112,7 +112,6 @@ final class HomeViewController: UIViewController {
     }
     
     private func loadRestaurants(latitude: Double, longitude: Double) {
-        
             service.restaurantValues(completion: { [weak self] result in
                 switch result {
                 case .success(let restaurants):
@@ -219,11 +218,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantCell.identifier, for: indexPath) as! RestaurantCell
         cell.configure(with: listViewModel.cellViewModel(for: indexPath))
-        
-        let rectOfCellInTableView = tableView.rectForRow(at: indexPath)
-        let rectOfCellInSuperview = tableView.convert(rectOfCellInTableView, to: tableView.superview)
-        
-//        cell.updateIconColor(yPosition: rectOfCellInSuperview.origin.y, maxHeight: tableView.frame.height)
         return cell
     }
     
