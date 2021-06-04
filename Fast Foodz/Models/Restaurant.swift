@@ -40,18 +40,12 @@ enum FoodType: String {
         switch string {
         case FoodType.pizza.rawValue:
             return .pizza
-        case FoodType.mexican.rawValue:
+        case FoodType.mexican.rawValue, FoodType.tacos.rawValue:
             return .mexican
-        case FoodType.chinese.rawValue:
+        case FoodType.chinese.rawValue, FoodType.dimsum.rawValue, FoodType.szechuan.rawValue:
             return .chinese
         case FoodType.burgers.rawValue:
             return .burgers
-        case FoodType.tacos.rawValue:
-            return .tacos
-        case FoodType.dimsum.rawValue:
-            return .dimsum
-        case FoodType.szechuan.rawValue:
-            return .szechuan
         default:
             return .notAvailable
         }
