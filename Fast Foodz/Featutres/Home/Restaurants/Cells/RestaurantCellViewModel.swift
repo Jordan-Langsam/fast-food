@@ -39,7 +39,7 @@ class RestaurantCellViewModel {
     }
     
     var image: UIImage {
-        if let image = UIImage(named: restaurant.foodType.imageString()) {
+        if let image = UIImage(named: restaurant.foodType.imageString())?.withRenderingMode(.alwaysTemplate) {
             return image
         } else {
             return UIImage()

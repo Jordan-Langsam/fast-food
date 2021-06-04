@@ -15,6 +15,7 @@ private struct Constants {
     static let tacos = "tacos"
     static let dimsum = "dimsum"
     static let szechuan = "szechuan"
+    static let imageNotFound = "imageNotFound"
 }
 
 enum FoodType: String {
@@ -31,7 +32,7 @@ enum FoodType: String {
         case .dimsum, .szechuan, .chinese:
             return FoodType.chinese.rawValue
         case .notAvailable:
-            return String()
+            return Constants.imageNotFound
         }
     }
         
