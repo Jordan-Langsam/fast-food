@@ -10,6 +10,7 @@ private struct Constants {
     static let segmentControlTopPadding: CGFloat = 20.0
     static let segmentControlHorizontalPadding: CGFloat = 50.0
     static let segmentControlHeight: CGFloat = 40.0
+    static let tableViewHeaderHeight: CGFloat = 75.0
     static let segmentControlOption1 = "Map"
     static let segmentControlOption2 = "List"
 }
@@ -88,12 +89,8 @@ final class HomeViewController: UIViewController {
             self?.pushDetailsViewController(restaurant: restaurant)
         }
         
-        LocationManager.shared.locationUpdated = { [weak self] locations in 
-            guard let coordinates = locations.last?.coordinate else {
-                return
-            }
-            
-            self?.userLocation = coordinates
+        LocationManager.shared.locationUpdated = { [weak self] location in
+            self?.userLocation = location.coordinate
             
             if let location = self?.userLocation {
                 self?.mapViewModel.setLatitude(latitude: location.latitude)
@@ -216,7 +213,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 75
+        return Constants.tableViewHeaderHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

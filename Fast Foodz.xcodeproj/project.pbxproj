@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,7 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		170218CA266A4C52008A3B4D /* Fast Foodz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Fast Foodz.app"; path = "/Users/jordan/Desktop/iOS Code Challenge/Fast Foodz/build/Debug-iphoneos/Fast Foodz.app"; sourceTree = "<absolute>"; };
+		170218CC266A4DDF008A3B4D /* Fast Foodz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast Foodz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17211A892663F9B5008D480B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		17211A8D26640763008D480B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		17211A9126652BBC008D480B /* SegmentedControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlManager.swift; sourceTree = "<group>"; };
@@ -274,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				9762A92123DE2C1D005C3A4D /* Fast Foodz */,
+				170218CC266A4DDF008A3B4D /* Fast Foodz.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,7 +319,7 @@
 			);
 			name = "Fast Foodz";
 			productName = "Fast Foodz";
-			productReference = 170218CA266A4C52008A3B4D /* Fast Foodz.app */;
+			productReference = 170218CC266A4DDF008A3B4D /* Fast Foodz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

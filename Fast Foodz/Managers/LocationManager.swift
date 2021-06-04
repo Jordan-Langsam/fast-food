@@ -18,7 +18,7 @@ class LocationManager: NSObject {
     static let shared = LocationManager()
         private var locationManager: CLLocationManager = CLLocationManager()
         private var requestLocationAuthorizationCallback: ((CLAuthorizationStatus) -> Void)?
-        var locationUpdated: (([CLLocation]) -> Void)?
+        var locationUpdated: ((CLLocation) -> Void)?
         var defaultUserLocation: CLLocation = CLLocation(latitude: Constants.defaultLatitude, longitude: Constants.defaultLongitude)
 }
 
@@ -50,13 +50,13 @@ extension LocationManager: CLLocationManagerDelegate {
         }
 
         if (manager.location == nil) {
-            locationUpdated?([defaultUserLocation])
+            locationUpdated?(defaultUserLocation)
         } else {
             guard let latitude = manager.location?.coordinate.latitude, let longitude = manager.location?.coordinate.longitude else {
                 return
             }
 
-            self.locationUpdated?([CLLocation(latitude: latitude, longitude: longitude)])
+            self.locationUpdated?(CLLocation(latitude: latitude, longitude: longitude))
         }
     }
 }
