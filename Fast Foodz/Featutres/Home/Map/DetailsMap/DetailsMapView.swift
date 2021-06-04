@@ -49,7 +49,7 @@ class DetailsMapView: UIView {
                 for route in unwrappedResponse.routes {
                     let insetAmount: CGFloat = 30
                     
-                    let alteredMap = mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: insetAmount, left: insetAmount, bottom: insetAmount, right: insetAmount))
+                    let alteredMap = self.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: insetAmount, left: insetAmount, bottom: insetAmount, right: insetAmount))
 
                     self.mapView.addOverlay(route.polyline)
                     self.mapView.setVisibleMapRect(alteredMap, animated: true)
