@@ -24,23 +24,6 @@ class RestaurantListViewModel {
         self.restaurants = restaurants
     }
     
-    func heightFor(indexPath: IndexPath) -> CGFloat {
-        let restaurant = restaurants[indexPath.row]
-        let verticalPadding: CGFloat = RestaurantCellViewModelConstants.topContentPadding
-        let subheaderTopPadding: CGFloat = RestaurantCellViewModelConstants.subheaderTopAnchor
-
-        let labelWidth: CGFloat = (UIScreen.main.bounds.size.width * RestaurantCellViewModelConstants.nameLabelWidthMultiplier)
-        
-        let subheader = String.subheaderString(for: restaurant)
-        
-        var minHeight = (verticalPadding * 2) + subheaderTopPadding
-        minHeight += restaurant.name.height(withConstrainedWidth: labelWidth, font: UIFont.preferredFont(forTextStyle: .title3))
-        
-        minHeight += subheader.height(withConstrainedWidth: labelWidth, font: UIFont.preferredFont(forTextStyle: .subheadline))
-        
-        return minHeight
-    }
-    
     func restaurant(for index: IndexPath) -> Restaurant {
         return restaurants[index.row]
     }

@@ -8,11 +8,11 @@
 import Foundation
 
 private enum Constants {
-    static let feetToMilesRatio: Double = 0.000189394
+    static let metersToMilesRatio: Double = 0.000621371
 }
 
 extension Double {
-    func feetToMiles() -> Double {
-        return self * Constants.feetToMilesRatio
+    func metersToMiles() -> Double {
+        return self * Constants.metersToMilesRatio
     }
 }

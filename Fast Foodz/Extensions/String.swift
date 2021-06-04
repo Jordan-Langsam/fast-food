@@ -26,6 +26,6 @@ extension String {
     }
     
     static func subheaderString(for restaurant: Restaurant) -> String {
-        return Constants.subheaderPrefix + milesFormatting(miles: restaurant.distance.feetToMiles()) + Constants.subheaderSuffix
+        return Constants.subheaderPrefix + milesFormatting(miles: restaurant.distance.metersToMiles()) + Constants.subheaderSuffix
     }
 }

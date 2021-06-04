@@ -165,6 +165,7 @@ final class HomeViewController: UIViewController {
         tableView.register(cell: RestaurantCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
         
         view.addSubview(tableView)
         tableView.backgroundColor = .white
@@ -219,10 +220,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantCell.identifier, for: indexPath) as! RestaurantCell
         cell.configure(with: listViewModel.cellViewModel(for: indexPath))
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return listViewModel.heightFor(indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

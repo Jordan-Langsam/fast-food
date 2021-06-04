@@ -87,7 +87,8 @@ class RestaurantCell: UITableViewCell {
         
         subheaderLabel.addConstraints{[
             $0.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: RestaurantCellViewModelConstants.subheaderTopAnchor),
-            $0.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
+            $0.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            $0.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -RestaurantCellViewModelConstants.topContentPadding)
         ]}
     }
     
