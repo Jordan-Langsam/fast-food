@@ -102,26 +102,4 @@ class RestaurantCell: UITableViewCell {
             $0.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: RestaurantCellViewModelConstants.seperatorHorizontalPadding)
         ]}
     }
-    
-    func updateIconColor(yPosition: CGFloat, maxHeight: CGFloat) {
-        let color = colorForPosition(position: yPosition, height: maxHeight)
-        
-        iconImageView.tintColor = color
-        setNeedsLayout()
-    }
-    
-    private func colorForPosition(position: CGFloat, height: CGFloat) -> UIColor {
-        let gradientPortion: CGFloat = (height * ( CGFloat(1 / CGFloat(UIColor.gradientColors.count))))
-                
-        var color: UIColor?
-        
-        for index in 1...UIColor.gradientColors.count {
-            if position <= gradientPortion * CGFloat(index) {
-                color = UIColor.gradientColors[index - 1]
-                break
-            }
-        }
-        
-        return color ?? UIColor.gradientColors.last!
-    }
 }

@@ -13,13 +13,13 @@ class LocationManager: NSObject {
     private enum Constants {
         static let defaultLatitude: Double = 40.758896
         static let defaultLongitude: Double = -73.985130
+        static let defaultUserLocation: CLLocation = CLLocation(latitude: Constants.defaultLatitude, longitude: Constants.defaultLongitude)
     }
     
     static let shared = LocationManager()
         private var locationManager: CLLocationManager = CLLocationManager()
         private var requestLocationAuthorizationCallback: ((CLAuthorizationStatus) -> Void)?
         var locationUpdated: ((CLLocation) -> Void)?
-        var defaultUserLocation: CLLocation = CLLocation(latitude: Constants.defaultLatitude, longitude: Constants.defaultLongitude)
 }
 
 extension LocationManager: CLLocationManagerDelegate {
@@ -50,7 +50,7 @@ extension LocationManager: CLLocationManagerDelegate {
         }
 
         if (manager.location == nil) {
-            locationUpdated?(defaultUserLocation)
+            locationUpdated?(Constants.defaultUserLocation)
         } else {
             guard let latitude = manager.location?.coordinate.latitude, let longitude = manager.location?.coordinate.longitude else {
                 return

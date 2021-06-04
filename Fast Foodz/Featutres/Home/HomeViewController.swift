@@ -223,7 +223,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let rectOfCellInTableView = tableView.rectForRow(at: indexPath)
         let rectOfCellInSuperview = tableView.convert(rectOfCellInTableView, to: tableView.superview)
         
-        cell.updateIconColor(yPosition: rectOfCellInSuperview.origin.y, maxHeight: tableView.frame.height)
+//        cell.updateIconColor(yPosition: rectOfCellInSuperview.origin.y, maxHeight: tableView.frame.height)
         return cell
     }
     
@@ -234,25 +234,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let restaurant = listViewModel.restaurant(for: indexPath)
         pushDetailsViewController(restaurant: restaurant)
-    }
-    
-    
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard scrollView == tableView else {
-            return
-        }
-                
-        tableView.indexPathsForVisibleRows?.forEach {
-            guard let cell: RestaurantCell = tableView.cellForRow(at: $0) as? RestaurantCell else {
-                return
-            }
-
-            let rectOfCellInTableView = tableView.rectForRow(at: $0)
-            let rectOfCellInSuperview = tableView.convert(rectOfCellInTableView, to: tableView.superview)
-            
-            cell.updateIconColor(yPosition: rectOfCellInSuperview.origin.y, maxHeight: tableView.frame.height)
-        }
     }
 }
 
